@@ -1,0 +1,12 @@
+<!--A maneira original de se fazer isto, era o app-blog-list ser o principal-->
+<!--Porém com o conceito do shell, ele vai ser movido, e antes do app-shell ser implementado-->
+<!--Vai sumir tudo da tela-->
+<!--<app-blog-list></app-blog-list>-->
+
+<app-shell>
+    <!--Simplesmente fazer isto não vai funcionar, tem que usar o select, para mandar a porção correta para o local correto-->
+    <!--Usando o ng-content, o arquivo shell component sabe qual parte do código exibir, através dos seletores header body e footer-->
+    <h1 header #appHeader>Java Brains Angular Blog</h1>
+    <app-blog-list body></app-blog-list>
+    <h2 footer>Footer</h2>
+</app-shell>

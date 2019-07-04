@@ -1,0 +1,23 @@
+<!--This is the child component-->
+
+<!-- o [é usado porque o vai ter um evaluation aqui]-->
+<div class="card blog-title" [ngClass]="{'fav': post.isFav}">
+    <div class="card-body">
+        <h5 class="card-title" appHighlight="green">
+            {{post.title}}
+        </h5>
+        <p class="card-text" (click)="showFullSummary()">
+            <!--Este é um dos pipes usados no angular. Neste exemplo o conteúdo de -->
+            <!--post.summary é enviado ao truncate, que é uma função, e o retorno disso -->
+            <!--Vai ser exibido na tela -->
+            <!--O pipe tem que ser gerado com o angular cli-->
+            <!--{{post.summary | truncate: [30] }}-->
+
+            {{ post.summary }}
+        </p>
+
+        <a href="#" (click)="toggleFav()" class="btn btn-primary blog-btn">Favorite</a>
+        <a href="#" class="btn btn-primary blog-btn">Read</a>
+
+    </div>
+</div>
